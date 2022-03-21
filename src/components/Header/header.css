@@ -1,0 +1,153 @@
+body {
+    font-family: "Sans";
+}
+.header {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.06);
+}
+.container {
+    max-width: 1320px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.header__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+.header__logo-img {
+    width: 210px;
+    height: 33px;
+}
+.header__list {
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: normal;
+}
+.header__item {
+    position: relative;
+    margin-right: 40px;
+    transition: all 0.5s;
+}
+.header__item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0%;
+    transition: all 0.5s;
+    height: 1px;
+    background: linear-gradient(270deg, #0153ff -51.6%, #7f38db 100%);
+}
+.header__item:hover::after {
+    transition: all 0.5s;
+    width: 100%;
+}
+.header__items {
+    display: flex;
+}
+
+.header__btns {
+    display: flex;
+    margin-left: auto;
+}
+.header__login,
+.header__registe {
+    height: 44px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.header__registe::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2px;
+    background: linear-gradient(270deg, #0153ff -51.6%, #7f38db 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    border-radius: 5px;
+}
+
+.header__login {
+    color: #1e1e1e;
+    position: relative;
+    transition: all 0.5s;
+    background: #fff;
+}
+.header__login:hover {
+    color: #fff;
+    transition: all 0.5s;
+    background: linear-gradient(270deg, #0153ff -51.6%, #7f38db 100%);
+}
+
+.header__login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2px;
+    background: linear-gradient(270deg, #0153ff -51.6%, #7f38db 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    border-radius: 5px;
+}
+.header__registe {
+    @apply lg:ml-[0] xl:ml-[20px] relative bg-gradient-to-r from-from to-to text-white transition-all hover:duration-500 hover:text-black hover:bg-gradient-to-r hover:to-white hover:from-white hover:transition-all hover:duration-500;
+}
+
+.header__mobile-social,
+.header__mobile-top,
+.header__burger {
+    @apply xl:hidden;
+}
+.header__menu {
+    @apply absolute right-[0] top-[6px];
+}
+.header__burger {
+    @apply w-[20px] h-[1.5px] bg-black relative;
+}
+.header__burger + .header__burger::after {
+    @apply content-[""] absolute w-[20px] h-[1.5px] bg-black bottom-[6px];
+}
+
+.header__burger + .header__burger {
+    @apply w-[20px] h-[2px] bg-black mt-[10px];
+}
+
+.header__mobile-top {
+    @apply hidden;
+}
+
+.header__social-items {
+    @apply flex items-center mt-[36px] justify-around bg-white rounded-full max-w-[210px] max-h-[36px] mx-auto;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+}
+
+.facebook,
+.youtube,
+.instagram,
+.linkedin {
+    @apply w-[36px] h-[36px];
+    fill: #b3b3b3;
+}
+
+.facebook:hover,
+.youtube:hover,
+.instagram:hover,
+.linkedin:hover {
+    fill: linear-gradient(270deg, #0153ff -51.6%, #7f38db 100%);
+    fill: red;
+}
